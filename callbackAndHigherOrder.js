@@ -123,7 +123,22 @@ contains(names, 'Colt', result => {
 */
 
 // CODE HERE
+// let uniqArr = []
+const uniq = (names, callback) => {
+  for (let i = 0; i < names.length; i++) {
+    for (let j = i+1; j < names.length; j++){
+    if(names[i] === names[j]) {
+      names.splice(j, 1)
+      j--
+    }
+    } 
+}
+callback(names)
+}
 
+const callback = (uniqArr) => {
+  console.log(`The new names array with all the duplicate items removed is ${uniqArr}`);
+}
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
   The callback function should take in one parameter called uniqArr.
@@ -132,7 +147,7 @@ contains(names, 'Colt', result => {
 */
 
 // CODE HERE
-
+uniq(names, callback)
 
 
 ////////// PROBLEM 6 //////////
