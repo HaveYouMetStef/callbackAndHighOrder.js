@@ -136,9 +136,9 @@ const uniq = (names, callback) => {
 callback(names)
 }
 
-const callback = (uniqArr) => {
-  console.log(`The new names array with all the duplicate items removed is ${uniqArr}`);
-}
+// const callback = (uniqArr) => {
+//   // console.log(`The new names array with all the duplicate items removed is ${uniqArr}`);
+// }
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
   The callback function should take in one parameter called uniqArr.
@@ -147,7 +147,7 @@ const callback = (uniqArr) => {
 */
 
 // CODE HERE
-uniq(names, callback)
+// uniq(names, callback)
 
 
 ////////// PROBLEM 6 //////////
@@ -158,7 +158,11 @@ uniq(names, callback)
 */
 
 // CODE HERE 
-
+const each = (names, callback) => {
+  for (let i = 0; i < names.length; i++) {
+    callback(names[i], i)
+  }
+}
 
 /*
   Invoke the each function, passing in the names array and a callback function.
@@ -168,7 +172,9 @@ uniq(names, callback)
 */
 
 // CODE HERE
-
+each(names, callback = (item, index) => {
+  // console.log(`The item at index ${index} is ${item}`);
+})
 
 ////////// PROBLEM 7 //////////
 
@@ -201,15 +207,21 @@ var users = [
 // Do not edit the code above.
 
 // CODE HERE 
-
-
+const getUserById = (users, id, callback) => {
+  for (let i = 0; i < users.length; i++){
+    if (users[i].id === id ) {
+      callback(users[i])
+    } 
+  }
+}
+// console.log(users[1].email);
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// getUserById(users, '16t', user => {
-//   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
-// })
+getUserById(users, '16t', user => {
+  console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
+})
 
 ////////// CHALLENGE //////////
 
