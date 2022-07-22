@@ -126,3 +126,24 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 */
 
 // CODE HERE
+const bobsOnly = purchases.filter(purchase => {  
+  let name = purchase.owner 
+  // console.log(name);
+  if (name === 'Bob') {
+    return true
+  }
+})
+
+
+
+console.log('Bobs total', bobsOnly);
+
+const bobsTotal = bobsOnly.map(bob => {
+  let price = bob.price
+    return price
+}) 
+const bobsComplete = bobsTotal.reduce((acc, curr) => acc + curr)
+
+console.log('Bobs total is', bobsComplete);
+
+// .reduce(purchases, i => purchases.price + i)
